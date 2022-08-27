@@ -1,6 +1,7 @@
 ﻿using MediatR;
+using MediatRSample.Application.Notifications;
 
-namespace MediatRSample.Application.Notifications
+namespace MediatRSample.Application.EventHandlers
 {
     public class LogEventHandler :
                             INotificationHandler<CreatedPersonNotification>,

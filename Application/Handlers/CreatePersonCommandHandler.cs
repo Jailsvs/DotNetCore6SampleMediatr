@@ -1,9 +1,10 @@
 ﻿using MediatR;
+using MediatRSample.Application.Commands;
 using MediatRSample.Application.Models;
 using MediatRSample.Application.Notifications;
 using MediatRSample.Repositories;
 
-namespace MediatRSample.Application.Commands
+namespace MediatRSample.Application.Handlers
 {
     public class CreatePersonCommandHandler : IRequestHandler<CreatePersonCommand, string>
     {
@@ -11,8 +12,8 @@ namespace MediatRSample.Application.Commands
         private readonly IRepository<Person> _repository;
         public CreatePersonCommandHandler(IMediator mediator, IRepository<Person> repository)
         {
-            this._mediator = mediator;
-            this._repository = repository;
+            _mediator = mediator;
+            _repository = repository;
         }
         public async Task<string> Handle(CreatePersonCommand request, CancellationToken cancellationToken)
         {
